@@ -26,6 +26,7 @@ public final class Contract {
         public static final String COLUMN_BIRTHDAY = "birthday";
         public static final String COLUMN_LOGED_IN = "login";
         public static final String COLUMN_ADDRESS = "address";
+        public static final String COLUMN_RATING = "rating";
 
         public static final String COLUMN_PLACE_ID = "place";
         public static final String COLUMN_USER_ID = "user id";

@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minHeight="150dp"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:id="@+id/list_item">
 
     <ImageView
         android:id="@+id/cws_image"
@@ -34,6 +35,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"

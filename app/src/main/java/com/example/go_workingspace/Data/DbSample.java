@@ -26,7 +26,9 @@ public class DbSample extends AppCompatActivity {
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(Contract.Entry.COLUMN_NAME, "Ibrahim");
+        values.put(Contract.Entry.COLUMN_NAME, "Island");
+        values.put(Contract.Entry.COLUMN_ADDRESS, "Abdo Basha,\nAbassia");
+        values.put(Contract.Entry.COLUMN_RATING, 4.2);
 
         Uri uri = getContentResolver().insert(Contract.Entry.HISTORY_ID_URI, values);
         long newRowId = uri.getPort();
