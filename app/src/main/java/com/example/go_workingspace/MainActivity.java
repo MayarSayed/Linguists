@@ -1,5 +1,6 @@
 package com.example.go_workingspace;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -80,7 +81,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-
+            Intent listItem = new Intent(MainActivity.this, ListActivity.class);
+            startActivity(listItem);
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_tools) {
