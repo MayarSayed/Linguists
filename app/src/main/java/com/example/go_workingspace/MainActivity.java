@@ -84,10 +84,15 @@ public class MainActivity extends AppCompatActivity
             Intent listItem = new Intent(MainActivity.this, ListActivity.class);
             startActivity(listItem);
         } else if (id == R.id.nav_slideshow) {
-
+            Intent signUp = new Intent(MainActivity.this, SignUp_.class);
+            startActivity(signUp);
         } else if (id == R.id.nav_tools) {
+            Intent signIn = new Intent(MainActivity.this, SignInActivity.class);
+            startActivity(signIn);
 
         } else if (id == R.id.nav_share) {
+            Intent bookForm = new Intent(MainActivity.this, BookForm.class);
+            startActivity(bookForm);
 
         } else if (id == R.id.nav_send) {
 
