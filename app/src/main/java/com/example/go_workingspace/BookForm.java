@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -42,11 +43,14 @@ public class BookForm extends AppCompatActivity {
         setContentView(R.layout.activity_book_form);
 
         //Room Type
-        Spinner dropdown = findViewById(R.id.Room_type);
-        ArrayAdapter<String> adapter_room =
-                new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Rooms);
-        dropdown.setAdapter(adapter_room);
+        Spinner spin =  findViewById(R.id.Room_type);
+        spin.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
 
+        //Creating the ArrayAdapter instance having the country list
+        ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,Rooms);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        spin.setAdapter(aa);
         //working Space Name
         ArrayAdapter<String> adapter_workingSpace =
                 new ArrayAdapter<>(this,android.R.layout.simple_dropdown_item_1line, WorkingSpace);
