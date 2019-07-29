@@ -9,6 +9,7 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
@@ -16,7 +17,7 @@ import java.util.Calendar;
 
 public class SignUp_ extends AppCompatActivity {
 
-    private TextView mDisplayDate;
+    private Button mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
     @Override
@@ -52,6 +53,7 @@ public class SignUp_ extends AppCompatActivity {
 
                 String date = month + "/" + day + "/" + year;
                 mDisplayDate.setText(date);
+                mDisplayDate.setClickable(false);
             }
         };
 
