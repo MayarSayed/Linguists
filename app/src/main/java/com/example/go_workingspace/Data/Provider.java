@@ -21,11 +21,10 @@ public class Provider extends ContentProvider {
     private static final int HISTORY = 104;
     private static final int HISTORY_ID = 105;
 
-    private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-
     private DbHelper mDbHelper;
 
     public static final String LOG_TAG = Provider.class.getSimpleName();
+    private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
     static {
         sUriMatcher.addURI(Contract.CONTENT_AUTHOITY, Contract.Entry.USER_TABLE_NAME, USER);
@@ -34,8 +33,8 @@ public class Provider extends ContentProvider {
         sUriMatcher.addURI(Contract.CONTENT_AUTHOITY, Contract.Entry.OWNER_TABLE_NAME, OWNER);
         sUriMatcher.addURI(Contract.CONTENT_AUTHOITY, Contract.Entry.OWNER_TABLE_NAME + "/#", OWNER_ID);
 
-        sUriMatcher.addURI(Contract.CONTENT_AUTHOITY, Contract.Entry.HISTORY_TABLE_NAME, HISTORY);
-        sUriMatcher.addURI(Contract.CONTENT_AUTHOITY, Contract.Entry.HISTORY_TABLE_NAME + "/#", HISTORY_ID);
+        //sUriMatcher.addURI(Contract.CONTENT_AUTHOITY, Contract.Entry.HISTORY_TABLE_NAME, HISTORY);
+        //sUriMatcher.addURI(Contract.CONTENT_AUTHOITY, Contract.Entry.HISTORY_TABLE_NAME + "/#", HISTORY_ID);
     }
 
     @Override
@@ -234,7 +233,7 @@ public class Provider extends ContentProvider {
     }
 
     private Uri insertOwner(Uri uri, ContentValues values) {
-        String name = values.getAsString(Contract.Entry.USER_TABLE_NAME);
+        String name = values.getAsString(Contract.Entry.COLUMN_NAME);
         if(name == null){
             throw new IllegalArgumentException("Owner requires a name");
         }

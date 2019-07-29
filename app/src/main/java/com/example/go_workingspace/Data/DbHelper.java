@@ -12,20 +12,20 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public static final String SQL_CREATE_USER = "CREATE TABLE " + Contract.Entry.USER_TABLE_NAME + " (" +
             Contract.Entry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            Contract.Entry.COLUMN_USERNAME + " TEXT PRIMARY KEY NOT NULL, " +
-            Contract.Entry.COLUMN_EMAIL + " TEXT PRIMARY KEY NOT NULL, " +
+            Contract.Entry.COLUMN_USERNAME + " TEXT NOT NULL, " +
+            Contract.Entry.COLUMN_EMAIL + " TEXT NOT NULL, " +
             Contract.Entry.COLUMN_NAME + " TEXT NOT NULL, " +
             Contract.Entry.COLUMN_PASSWORD + " TEXT NOT NULL, " +
-            Contract.Entry.COLUMN_BIRTHDAY + " TEXT NOT NULL, " +
+            Contract.Entry.COLUMN_BIRTHDAY + " TEXT NOT NULL DEFAULT \"16/08/1997\" " +
             Contract.Entry.COLUMN_LOGED_IN + " INTEGER DEFAULT 0);";
 
     public static final String SQL_CREATE_OWNER = "CREATE TABLE " + Contract.Entry.OWNER_TABLE_NAME + " (" +
             Contract.Entry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            Contract.Entry.COLUMN_USERNAME + " TEXT PRIMARY KEY NOT NULL, " +
-            Contract.Entry.COLUMN_EMAIL + " TEXT PRIMARY KEY NOT NULL, " +
+            Contract.Entry.COLUMN_USERNAME + " TEXT NOT NULL, " +
+            Contract.Entry.COLUMN_EMAIL + " TEXT NOT NULL, " +
             Contract.Entry.COLUMN_NAME + " TEXT NOT NULL, " +
             Contract.Entry.COLUMN_PASSWORD + " TEXT NOT NULL, " +
-            Contract.Entry.COLUMN_BIRTHDAY + " TEXT NOT NULL, " +
+            Contract.Entry.COLUMN_BIRTHDAY + " TEXT NOT NULL DEFAULT \"16/08/1997\", " +
             Contract.Entry.COLUMN_LOGED_IN + " INTEGER DEFAULT 0," +
             Contract.Entry.COLUMN_RATING + " REAL DEFAULT 0," +
             Contract.Entry.COLUMN_ADDRESS + " TEXT NOT NULL);";

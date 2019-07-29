@@ -20,30 +20,31 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cws_list_item);
+        setContentView(R.layout.activity_list);
 
-        RatingBar ratingBar = findViewById(R.id.rating_bar);
-        ratingBar.setMax(10);
+        //RatingBar ratingBar = findViewById(R.id.rating_bar);
+        //ratingBar.setMax(10);
 
-        mDbHelper = new DbHelper(this);
-
-        insertOwner("Island", "Abdo Basha, Abassia", 4.2);
-        insertOwner("Zone", "Abdo Basha, Abassia", 4.3);
+        insertOwner("Island", "Abdo Basha, Abassia", 4.2, "island", "password");
+        insertOwner("Zone", "Abdo Basha, Abassia", 4.3, "zone", "password");
         displayData();
     }
 
-    private void insertOwner(String name, String address, double rating){
+    private void insertOwner(String name, String address, double rating, String username, String password){
         ContentValues values = new ContentValues();
         values.put(Contract.Entry.COLUMN_NAME, name);
         values.put(Contract.Entry.COLUMN_ADDRESS, address);
         values.put(Contract.Entry.COLUMN_RATING, rating);
-
-        Uri uri = getContentResolver().insert(Contract.Entry.HISTORY_ID_URI, values);
-        long newRowId = uri.getPort();
+        values.put(Contract.Entry.COLUMN_USERNAME, username);
+        values.put(Contract.Entry.COLUMN_PASSWORD, password);
+        values.put(Contract.Entry.COLUMN_EMAIL, password);
+        values.put(Contract.Entry.COLUMN_BIRTHDAY, password);
+        Uri uri = getContentResolver().insert(Contract.Entry.OWNER_CONTENT_URI, values);
     }
 
     private void displayData(){
         String[] projection = {
+                Contract.Entry._ID,
                 Contract.Entry.COLUMN_NAME,
                 Contract.Entry.COLUMN_ADDRESS,
                 Contract.Entry.COLUMN_RATING
