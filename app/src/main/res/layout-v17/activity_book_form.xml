@@ -47,6 +47,7 @@
                 android:background="@android:drawable/btn_dropdown"
                 android:spinnerMode="dropdown"
                 android:layout_alignParentRight="true"
+
                 />
 
         </RelativeLayout>
