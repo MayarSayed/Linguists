@@ -253,11 +253,6 @@ public class Provider extends ContentProvider {
             throw new IllegalArgumentException("Owner requires a password");
         }
 
-        String birthday = values.getAsString(Contract.Entry.COLUMN_BIRTHDAY);
-        if(birthday == null){
-            throw new IllegalArgumentException("Owner requires a birthday");
-        }
-
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
 
         // Insert the new pet with the given values

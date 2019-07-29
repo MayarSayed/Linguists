@@ -30,7 +30,6 @@ public class OwnerCursorAdaptor extends CursorAdapter {
         String name = cursor.getString(cursor.getColumnIndex(Contract.Entry.COLUMN_NAME));
         String address = cursor.getString(cursor.getColumnIndex(Contract.Entry.COLUMN_ADDRESS));
         float rating = cursor.getInt(cursor.getColumnIndex(Contract.Entry.COLUMN_RATING));
-        ratingBar.setMax(5);
         ratingBar.setRating(rating);
 
         itemName.setText(name);

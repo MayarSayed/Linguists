@@ -25,20 +25,19 @@ public class ListActivity extends AppCompatActivity {
         //RatingBar ratingBar = findViewById(R.id.rating_bar);
         //ratingBar.setMax(10);
 
-        insertOwner("Island", "Abdo Basha, Abassia", 4.2, "island", "password");
-        insertOwner("Zone", "Abdo Basha, Abassia", 4.3, "zone", "password");
+        insertOwner("Island", "Abdo Basha, Abassia", 4.2, "island", "password", "island@gmail.com");
+        insertOwner("Zone", "Abdo Basha, Abassia", 4.7, "zone", "password", "Zone@gmail.com");
         displayData();
     }
 
-    private void insertOwner(String name, String address, double rating, String username, String password){
+    private void insertOwner(String name, String address, double rating, String username, String password, String email){
         ContentValues values = new ContentValues();
         values.put(Contract.Entry.COLUMN_NAME, name);
         values.put(Contract.Entry.COLUMN_ADDRESS, address);
         values.put(Contract.Entry.COLUMN_RATING, rating);
         values.put(Contract.Entry.COLUMN_USERNAME, username);
         values.put(Contract.Entry.COLUMN_PASSWORD, password);
-        values.put(Contract.Entry.COLUMN_EMAIL, password);
-        values.put(Contract.Entry.COLUMN_BIRTHDAY, password);
+        values.put(Contract.Entry.COLUMN_EMAIL, email);
         Uri uri = getContentResolver().insert(Contract.Entry.OWNER_CONTENT_URI, values);
     }
 
