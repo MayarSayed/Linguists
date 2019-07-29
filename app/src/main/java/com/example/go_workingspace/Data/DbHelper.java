@@ -26,15 +26,15 @@ public class DbHelper extends SQLiteOpenHelper {
             Contract.Entry.COLUMN_NAME + " TEXT NOT NULL, " +
             Contract.Entry.COLUMN_PASSWORD + " TEXT NOT NULL, " +
             Contract.Entry.COLUMN_BIRTHDAY + " TEXT NOT NULL, " +
-            Contract.Entry.COLUMN_LOGED_IN + " INTEGER DEFAULT 0)" +
-            Contract.Entry.COLUMN_RATING + " REAL DEFAULT 0)" +
-            Contract.Entry.COLUMN_ADDRESS + " TEXT NOT NULL;";
+            Contract.Entry.COLUMN_LOGED_IN + " INTEGER DEFAULT 0," +
+            Contract.Entry.COLUMN_RATING + " REAL DEFAULT 0," +
+            Contract.Entry.COLUMN_ADDRESS + " TEXT NOT NULL);";
 
-    public static final String SQL_CREATE_HISTORY = "CREATE TABLE " + Contract.Entry.HISTORY_TABLE_NAME + " (" +
+    /*public static final String SQL_CREATE_HISTORY = "CREATE TABLE " + Contract.Entry.HISTORY_TABLE_NAME + " (" +
             Contract.Entry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             Contract.Entry.COLUMN_PLACE_ID + " INTEGER NOT NULL, " +
             Contract.Entry.COLUMN_USER_ID + " INTEGER NOT NULL, " +
-            Contract.Entry.COLUMN_DATE + " TEXT NOT NULL);";
+            Contract.Entry.COLUMN_DATE + " TEXT NOT NULL);";*/
 
     public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -44,7 +44,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_USER);
         db.execSQL(SQL_CREATE_OWNER);
-        db.execSQL(SQL_CREATE_HISTORY);
+        //db.execSQL(SQL_CREATE_HISTORY);
     }
 
     @Override

@@ -122,6 +122,7 @@ public class Provider extends ContentProvider {
             case HISTORY:
                 return insertHistory(uri, contentValues);
             default:
+                Log.e(LOG_TAG, "Insertion is not supported for " + uri);
                 throw new IllegalArgumentException("Insertion is not supported for " + uri);
         }
     }

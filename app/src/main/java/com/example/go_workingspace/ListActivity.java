@@ -24,9 +24,11 @@ public class ListActivity extends AppCompatActivity {
 
         RatingBar ratingBar = findViewById(R.id.rating_bar);
         ratingBar.setMax(10);
+
+        mDbHelper = new DbHelper(this);
+
         insertOwner("Island", "Abdo Basha, Abassia", 4.2);
         insertOwner("Zone", "Abdo Basha, Abassia", 4.3);
-
         displayData();
     }
 

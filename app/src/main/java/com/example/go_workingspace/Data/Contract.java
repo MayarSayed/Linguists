@@ -14,8 +14,8 @@ public final class Contract {
     public static final Uri BASE_ID_URI = Uri.parse("content://" + CONTENT_AUTHOITY + "/#");
 
     public static final class Entry implements BaseColumns{
-        public static final String USER_TABLE_NAME = "user accounts";
-        public static final String OWNER_TABLE_NAME = "owner accounts";
+        public static final String USER_TABLE_NAME = "userAccounts";
+        public static final String OWNER_TABLE_NAME = "ownerAccounts";
         public static final String HISTORY_TABLE_NAME = "history";
 
         public static final String _ID = "_id";
