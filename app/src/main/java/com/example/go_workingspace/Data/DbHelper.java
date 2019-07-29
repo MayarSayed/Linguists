@@ -26,7 +26,8 @@ public class DbHelper extends SQLiteOpenHelper {
             Contract.Entry.COLUMN_NAME + " TEXT NOT NULL, " +
             Contract.Entry.COLUMN_PASSWORD + " TEXT NOT NULL, " +
             Contract.Entry.COLUMN_BIRTHDAY + " TEXT NOT NULL, " +
-            Contract.Entry.COLUMN_LOGED_IN + " INTEGER DEFAULT 0);";
+            Contract.Entry.COLUMN_LOGED_IN + " INTEGER DEFAULT 0)" +
+            Contract.Entry.COLUMN_ADDRESS + " TEXT NOT NULL;";
 
     public static final String SQL_CREATE_HISTORY = "CREATE TABLE " + Contract.Entry.HISTORY_TABLE_NAME + " (" +
             Contract.Entry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +

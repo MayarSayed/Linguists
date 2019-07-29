@@ -9,8 +9,8 @@ public final class Contract {
 
     }
 
-    public static final String CONTENT_AUTHOITY = "";
-    public static final Uri BASE_CONTENT_URI = Uri.parse("contentL//" + CONTENT_AUTHOITY);
+    public static final String CONTENT_AUTHOITY = "com.example.android.go_working_space";
+    public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHOITY);
     public static final Uri BASE_ID_URI = Uri.parse("content://" + CONTENT_AUTHOITY + "/#");
 
     public static final class Entry implements BaseColumns{
@@ -25,6 +25,7 @@ public final class Contract {
         public static final String COLUMN_PASSWORD = "password";
         public static final String COLUMN_BIRTHDAY = "birthday";
         public static final String COLUMN_LOGED_IN = "login";
+        public static final String COLUMN_ADDRESS = "address";
 
         public static final String COLUMN_PLACE_ID = "place";
         public static final String COLUMN_USER_ID = "user id";
