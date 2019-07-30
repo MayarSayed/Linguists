@@ -20,15 +20,15 @@
             android:src="@drawable/ic_launcher_background"/>
 
         <EditText
-            android:text="Username/Email"
+            android:hint="Username/Email"
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"/>
 
         <EditText
-            android:text="Username/Email"
-            android:inputType="text"
+            android:hint="Password"
+            android:inputType="textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"/>
