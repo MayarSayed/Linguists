@@ -88,14 +88,26 @@
 
                 />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <EditText
+
+        <TextView
             android:id="@+id/ChooseTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:hint="Choose the time" />
+            android:text="Choose the time" />
+            <Spinner
+                android:id="@+id/availableSlots"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:entries="@array/Slots_arrays"
+                android:prompt="@string/slots_prompt" />
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"

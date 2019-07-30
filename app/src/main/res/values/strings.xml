@@ -23,4 +23,13 @@
         <item>Shared Area</item>
         <item>Training Room</item>
     </string-array>
+    <string name="slots_prompt">Select here</string>
+    <string-array name="Slots_arrays">
+        <item>10:00 AM</item>
+        <item>12:30 PM</item>
+        <item>01:00 PM</item>
+        <item>05:00 Pm</item>
+        <item>07:30 PM</item>
+        <item>08:00 Pm</item>
+    </string-array>
 </resources>
