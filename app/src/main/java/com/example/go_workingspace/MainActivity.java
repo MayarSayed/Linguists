@@ -22,15 +22,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String[] projection = {
-                Contract.Entry.COLUMN_LOGED_IN
-        }; // Add Columns you want to display
 
-        Cursor cursor = (Cursor) getContentResolver().query(
-                Contract.Entry.OWNER_CONTENT_URI, projection,
-                null,
-                null,
-                null);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -96,27 +88,35 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            Intent gotoMain = new Intent(MainActivity.this, MainActivity.class);
-            startActivity(gotoMain);
-        } else if (id == R.id.nav_list) {
-            Intent listItem = new Intent(MainActivity.this, ListActivity.class);
-            startActivity(listItem);
-        } else if (id == R.id.nav_share) {
+        if (id == R.id.nav_home)
+        {
+            Intent main = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(main);
+        }
+        else if (id == R.id.nav_profile)
+        {
+            Intent user = new Intent(MainActivity.this, Userprofile.class);
+            startActivity(user);
+        }
+        else if (id == R.id.nav_list)
+        {
+            Intent list = new Intent(MainActivity.this, ListActivity.class);
+            startActivity(list);
+        }
+        else if (id == R.id.nav_Book)
+        {
+            Intent book = new Intent(MainActivity.this, BookForm.class);
+            startActivity(book);
+        }
+        else if (id == R.id.nav_share) {
             Intent signUp = new Intent(MainActivity.this, SignUp_.class);
             startActivity(signUp);
-        } else if (id == R.id.nav_help) {
+
+        }
+        else if (id == R.id.nav_help)
+        {
             Intent signIn = new Intent(MainActivity.this, SignInActivity.class);
             startActivity(signIn);
-
-        } else if (id == R.id.nav_Book) {
-            Intent bookForm = new Intent(MainActivity.this, BookForm.class);
-            startActivity(bookForm);
-        }
-        else if ( id == R.id.nav_profile)
-        {
-            Intent userProfile = new Intent(MainActivity.this, Userprofile.class);
-            startActivity(userProfile);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
