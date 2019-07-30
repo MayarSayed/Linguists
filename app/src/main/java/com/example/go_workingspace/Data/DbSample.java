@@ -2,7 +2,6 @@ package com.example.go_workingspace.Data;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.widget.ListView;
 
@@ -43,6 +42,18 @@ public class DbSample extends AppCompatActivity {
         OwnerCursorAdaptor ownerCursorAdaptor = new OwnerCursorAdaptor(this, cursor);
 
         listView.setAdapter(ownerCursorAdaptor);
+    }
+
+    private void insertUser(String name, String address, double rating, String username, String password, String email, String birthday){
+        ContentValues values = new ContentValues(); // Like array but with (key, value) instead of (index, value)
+        values.put(Contract.Entry.COLUMN_NAME, name); // for the column "name" put value name in the new row
+        values.put(Contract.Entry.COLUMN_ADDRESS, address);
+        values.put(Contract.Entry.COLUMN_RATING, rating);
+        values.put(Contract.Entry.COLUMN_USERNAME, username);
+        values.put(Contract.Entry.COLUMN_PASSWORD, password);
+        values.put(Contract.Entry.COLUMN_EMAIL, email);
+        values.put(Contract.Entry.COLUMN_BIRTHDAY, birthday);
+        Uri uri = getContentResolver().insert(Contract.Entry.USER_CONTENT_URI, values); // OWNER_CONTENT_URI for owner table
     }
 
 }
