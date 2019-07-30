@@ -13,7 +13,7 @@
 
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:src="@drawable/space1"
         android:paddingBottom="10dp"
@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Platform for all co working spaces to view and book your suitable coworking space"
+        android:text="Platform for all co working and meeting spaces to find and book workspace match your needs and services"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="25dp"
@@ -87,13 +87,15 @@
             android:layout_height="60dp"
             android:text="Manage Booking"
             android:layout_marginRight="20dp"
-            android:textSize="10dp"/>
+            android:textSize="10dp"
+            android:onClick="goToBook"/>
         <Button
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:text="Manage Acount"
-            android:textSize="10dp"/>
+            android:textSize="10dp"
+            android:onClick="goToProfile"/>
 
     </LinearLayout>
 

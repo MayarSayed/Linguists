@@ -79,6 +79,16 @@ public class MainActivity extends AppCompatActivity
         Intent list = new Intent(MainActivity.this, ListActivity.class);
         startActivity(list);
     }
+    public void goToProfile(View view)
+    {
+        Intent Profile = new Intent(MainActivity.this, Userprofile.class);
+        startActivity(Profile );
+    }
+    public void goToBook(View view)
+    {
+        Intent bookForm = new Intent(MainActivity.this, BookForm.class);
+        startActivity(bookForm);
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
