@@ -24,7 +24,6 @@ public final class Contract {
         public static final String COLUMN_EMAIL = "email";
         public static final String COLUMN_PASSWORD = "password";
         public static final String COLUMN_BIRTHDAY = "birthday";
-        public static final String COLUMN_LOGED_IN = "login";
         public static final String COLUMN_ADDRESS = "address";
         public static final String COLUMN_RATING = "rating";
 
@@ -32,8 +31,15 @@ public final class Contract {
         public static final String COLUMN_USER_ID = "user id";
         public static final String COLUMN_DATE = "date";
 
-        public static final int NOT_LOGED_IN = 0;
-        public static final int LOGED_IN = 1;
+
+        public static final String COLUMN_WIFI = "wifi";
+        public static final String COLUMN_SHARED = "shared";
+        public static final String COLUMN_MEETING_ROOMS = "meeting";
+        public static final String COLUMN_DRINKS = "drinks";
+        public static final String COLUMN_OUTDOOR = "outdoor";
+
+
+        public static int currentId = -1;
 
         public static final Uri USER_CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, USER_TABLE_NAME);
         public static final Uri USER_ID_URI = Uri.withAppendedPath(BASE_ID_URI, USER_TABLE_NAME);
