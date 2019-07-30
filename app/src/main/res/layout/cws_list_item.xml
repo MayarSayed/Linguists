@@ -7,7 +7,9 @@
     android:layout_height="match_parent"
     android:minHeight="150dp"
     android:background="@android:color/white"
-    android:id="@+id/list_item">
+    android:id="@+id/list_item"
+    android:backgroundTint="@color/MyBackground"
+    >
 
     <ImageView
         android:id="@+id/cws_image"

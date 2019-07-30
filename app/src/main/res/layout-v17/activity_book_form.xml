@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/MyBackground"
     >
 <LinearLayout
     android:orientation="vertical"
@@ -132,6 +132,7 @@
                 android:textSize="20sp"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
+
                 />
 
             <TextView
@@ -165,6 +166,9 @@
             android:hint="Number of Members"
             android:layout_marginBottom="15dp"
             android:layout_marginTop="20sp"
+            android:shadowColor="@color/colorAccent"
+            android:textColorHighlight="@color/colorAccent"
+            android:textColorLink="@color/colorAccent"
             />
 
         <Button
