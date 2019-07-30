@@ -35,6 +35,8 @@ public final class Contract {
         public static final int NOT_LOGED_IN = 0;
         public static final int LOGED_IN = 1;
 
+        public static int currentId = -1;
+
         public static final Uri USER_CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, USER_TABLE_NAME);
         public static final Uri USER_ID_URI = Uri.withAppendedPath(BASE_ID_URI, USER_TABLE_NAME);
 

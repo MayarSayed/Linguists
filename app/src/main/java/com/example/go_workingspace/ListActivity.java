@@ -2,11 +2,9 @@ package com.example.go_workingspace;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ListView;
-import android.widget.RatingBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 

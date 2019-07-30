@@ -33,8 +33,8 @@ public class Provider extends ContentProvider {
         sUriMatcher.addURI(Contract.CONTENT_AUTHOITY, Contract.Entry.OWNER_TABLE_NAME, OWNER);
         sUriMatcher.addURI(Contract.CONTENT_AUTHOITY, Contract.Entry.OWNER_TABLE_NAME + "/#", OWNER_ID);
 
-        //sUriMatcher.addURI(Contract.CONTENT_AUTHOITY, Contract.Entry.HISTORY_TABLE_NAME, HISTORY);
-        //sUriMatcher.addURI(Contract.CONTENT_AUTHOITY, Contract.Entry.HISTORY_TABLE_NAME + "/#", HISTORY_ID);
+        sUriMatcher.addURI(Contract.CONTENT_AUTHOITY, Contract.Entry.HISTORY_TABLE_NAME, HISTORY);
+        sUriMatcher.addURI(Contract.CONTENT_AUTHOITY, Contract.Entry.HISTORY_TABLE_NAME + "/#", HISTORY_ID);
     }
 
     @Override
@@ -298,28 +298,28 @@ public class Provider extends ContentProvider {
         if(values.containsKey(Contract.Entry.COLUMN_NAME)){
             String name = values.getAsString(Contract.Entry.COLUMN_NAME);
             if(name == null){
-                throw new IllegalArgumentException("Pet requires a name");
+                throw new IllegalArgumentException("Requires valid name");
             }
         }
 
         if(values.containsKey(Contract.Entry.COLUMN_EMAIL)){
             String name = values.getAsString(Contract.Entry.COLUMN_EMAIL);
             if(name == null){
-                throw new IllegalArgumentException("Pet requires a name");
+                throw new IllegalArgumentException("Requires valid email");
             }
         }
 
         if(values.containsKey(Contract.Entry.COLUMN_USERNAME)){
             String name = values.getAsString(Contract.Entry.COLUMN_USERNAME);
             if(name == null){
-                throw new IllegalArgumentException("Pet requires a name");
+                throw new IllegalArgumentException("Requires valid username");
             }
         }
 
         if(values.containsKey(Contract.Entry.COLUMN_BIRTHDAY)){
             String name = values.getAsString(Contract.Entry.COLUMN_BIRTHDAY);
             if(name == null){
-                throw new IllegalArgumentException("Pet requires a name");
+                throw new IllegalArgumentException("Requires valid birthday");
             }
         }
 
