@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/MyBackground"
     >
 
 <LinearLayout
@@ -100,6 +100,7 @@
                 android:layout_marginLeft="25dp"
                 android:textSize="20sp"
                 android:id="@+id/date_text"
+                android:background="@color/forbutton"
                 />
         </LinearLayout>
 
@@ -144,6 +145,7 @@
             android:layout_height="wrap_content"
             android:text= "Register"
             android:layout_margin="30sp"
+            android:background="@color/forbutton"
             />
 
 

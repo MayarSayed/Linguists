@@ -56,7 +56,9 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:entries="@array/Room_arrays"
-                android:prompt="@string/room_prompt" />
+                android:prompt="@string/room_prompt"
+                android:background="@color/forbutton"
+                />
 
         </LinearLayout>
 
@@ -85,7 +87,7 @@
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="50dp"
                 android:id="@+id/date_text_2"
-
+                android:background="@color/forbutton"
                 />
         </LinearLayout>
         <LinearLayout
@@ -132,7 +134,7 @@
                 android:textSize="20sp"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
-
+                android:background="@color/forbutton"
                 />
 
             <TextView
@@ -154,6 +156,7 @@
                 android:textSize="20sp"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
+                android:background="@color/forbutton"
                 />
 
         </LinearLayout>
@@ -167,8 +170,8 @@
             android:layout_marginBottom="15dp"
             android:layout_marginTop="20sp"
             android:shadowColor="@color/colorAccent"
-            android:textColorHighlight="@color/colorAccent"
-            android:textColorLink="@color/colorAccent"
+         android:textColorHighlight="@color/colorPrimary"
+           android:textColorLink="@color/colorPrimaryDark"
             />
 
         <Button
@@ -176,6 +179,7 @@
             android:layout_height="wrap_content"
             android:text= "Submit"
             android:layout_margin="30sp"
+            android:background="@color/forbutton"
             />
     </LinearLayout>
 

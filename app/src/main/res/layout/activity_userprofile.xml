@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Userprofile">
+    tools:context=".Userprofile"
+    android:background="@color/MyBackground"
+    >
 
     <ImageView
         android:layout_width="120dp"
