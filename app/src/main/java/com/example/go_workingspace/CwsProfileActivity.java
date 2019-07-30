@@ -4,21 +4,15 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.go_workingspace.Data.Contract;
-import com.google.android.material.navigation.NavigationView;
 
-public class CwsProfileActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class CwsProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,17 +77,6 @@ public class CwsProfileActivity extends AppCompatActivity implements NavigationV
             shareView.setVisibility(View.INVISIBLE);
         }
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(name);
-        setSupportActionBar(toolbar);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
-
         // Find Location Layout
         LinearLayout location = findViewById(R.id.show_location);
 
@@ -110,52 +93,5 @@ public class CwsProfileActivity extends AppCompatActivity implements NavigationV
                 }
             }
         });
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_home)
-        {
-            Intent main = new Intent(CwsProfileActivity.this, MainActivity.class);
-            startActivity(main);
-        }
-        else if (id == R.id.nav_profile)
-        {
-            Intent user = new Intent(CwsProfileActivity.this, Userprofile.class);
-            startActivity(user);
-        }
-        else if (id == R.id.nav_list)
-        {
-            Intent list = new Intent(CwsProfileActivity.this, ListActivity.class);
-            startActivity(list);
-        }
-        else if (id == R.id.nav_Book)
-        {
-            Intent book = new Intent(CwsProfileActivity.this, BookForm.class);
-            startActivity(book);
-        }
-        else if (id == R.id.nav_share) {
-            Intent signUp = new Intent(CwsProfileActivity.this, SignUp_.class);
-            startActivity(signUp);
-
-        }
-        else if (id == R.id.nav_help)
-        {
-            Intent signIn = new Intent(CwsProfileActivity.this, SignInActivity.class);
-            startActivity(signIn);
-        }
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
     }
 }
