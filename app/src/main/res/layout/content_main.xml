@@ -10,16 +10,13 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:src="@drawable/space1"
         android:paddingBottom="10dp"
-        android:paddingTop="0dp"
+        android:paddingTop="0dp" />
 
-        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,30 +24,16 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="25dp"
-        android:textSize="10dp"
-        />
-    <LinearLayout
+        android:textSize="10dp" />
+
+    <SearchView
+        android:id="@+id/search_viewr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
-    <EditText
-        android:id="@+id/search_input"
-        android:layout_height="wrap_content"
-        android:layout_width="275dp"
-        android:focusableInTouchMode="true"
-        android:textCursorDrawable="@null"
-        android:textColor="#5D4037"
-        android:hint="Where do you want to work?"
-        android:inputType="text"
-        />
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/search"/>
-    </LinearLayout>
+        android:iconifiedByDefault="false"
+        android:queryHint="Location"
+        android:layout_marginRight="16dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -59,6 +42,7 @@
         android:layout_marginBottom="10dp"
         android:paddingRight="30dp"
         android:orientation="horizontal">
+
     <Button
         android:layout_weight="1"
         android:layout_width="0dp"
@@ -67,6 +51,7 @@
         android:layout_marginRight="20dp"
         android:onClick="goToWorkingspacesList"
         android:layout_height="match_parent" />
+
     <Button
         android:layout_weight="1"
         android:layout_width="0dp"
@@ -75,12 +60,14 @@
         android:layout_height="match_parent" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
         android:orientation="horizontal">
+
         <Button
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -89,6 +76,7 @@
             android:layout_marginRight="20dp"
             android:textSize="10dp"
             android:onClick="goToBook"/>
+
         <Button
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -98,7 +86,5 @@
             android:onClick="goToProfile"/>
 
     </LinearLayout>
-
-
 
 </LinearLayout>
