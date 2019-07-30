@@ -33,7 +33,7 @@
         android:iconifiedByDefault="false"
         android:queryHint="Location"
         android:layout_marginRight="16dp"
-        and
+
         />
 
     <LinearLayout
