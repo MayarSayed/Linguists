@@ -1,9 +1,7 @@
 package com.example.go_workingspace;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,15 +23,13 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        insert();
-
         Button signIn = findViewById(R.id.SignInButton);
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText usernameInput = findViewById(R.id.usernameSignIn);
                 EditText passwordInput = findViewById(R.id.passwordSignIn);
-                String username = usernameInput.getText().toString();
+                String username = usernameInput.getText().toString().trim();
                 String password = passwordInput.getText().toString();
 
                 String[] projection = {
@@ -70,15 +66,6 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-    }
-    private void insert(){
-        ContentValues values = new ContentValues();
-        values.put(Contract.Entry.COLUMN_NAME, "Ansary");
-        values.put(Contract.Entry.COLUMN_USERNAME, "ansary");
-        values.put(Contract.Entry.COLUMN_PASSWORD, "ansary");
-        values.put(Contract.Entry.COLUMN_BIRTHDAY, "Ansary");
-        values.put(Contract.Entry.COLUMN_EMAIL, "mohamedalansary@gmail.com");
-        Uri uri = getContentResolver().insert(Contract.Entry.USER_CONTENT_URI, values);
     }
 
     private void msg(String s){

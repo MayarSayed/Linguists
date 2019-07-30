@@ -1,9 +1,9 @@
 package com.example.go_workingspace;
 
-import android.content.ContentValues;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,32 +14,13 @@ import com.example.go_workingspace.Data.DbHelper;
 public class ListActivity extends AppCompatActivity {
 
     private DbHelper mDbHelper;
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        //RatingBar ratingBar = findViewById(R.id.rating_bar);
-        //ratingBar.setMax(10);
-
-        insertOwner("Island", "Abdo Basha, Abassia", 4.2, "island", "password", "island@gmail.com");
-        insertOwner("Zone", "Abdo Basha, Abassia", 4.7, "zone", "password", "Zone@gmail.com");
-        displayData();
-    }
-
-    private void insertOwner(String name, String address, double rating, String username, String password, String email){
-        ContentValues values = new ContentValues();
-        values.put(Contract.Entry.COLUMN_NAME, name);
-        values.put(Contract.Entry.COLUMN_ADDRESS, address);
-        values.put(Contract.Entry.COLUMN_RATING, rating);
-        values.put(Contract.Entry.COLUMN_USERNAME, username);
-        values.put(Contract.Entry.COLUMN_PASSWORD, password);
-        values.put(Contract.Entry.COLUMN_EMAIL, email);
-        Uri uri = getContentResolver().insert(Contract.Entry.OWNER_CONTENT_URI, values);
-    }
-
-    private void displayData(){
         String[] projection = {
                 Contract.Entry._ID,
                 Contract.Entry.COLUMN_NAME,
@@ -53,13 +34,19 @@ public class ListActivity extends AppCompatActivity {
                 null,
                 null);
 
-        // Find the ListView which will be populated with the pet data
-        ListView listView = (ListView) findViewById(R.id.list);
 
-        OwnerCursorAdaptor ownerCursorAdaptor = new OwnerCursorAdaptor(this, cursor);
+
+        final OwnerCursorAdaptor ownerCursorAdaptor = new OwnerCursorAdaptor(this, cursor);
+
+        listView = (ListView) findViewById(R.id.list);
 
         listView.setAdapter(ownerCursorAdaptor);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Object listItem = listView.getItemAtPosition(position);
+            }
+        });
     }
-
-
 }
