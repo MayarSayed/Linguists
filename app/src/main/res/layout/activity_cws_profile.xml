@@ -23,6 +23,20 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/main" />
 
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/left_arrow"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/right_arrow"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+
         </RelativeLayout>
 
         <LinearLayout
@@ -246,7 +260,7 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp" />
 
     </LinearLayout>
 
