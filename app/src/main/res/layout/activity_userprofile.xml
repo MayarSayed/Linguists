@@ -7,116 +7,121 @@
     android:orientation="vertical"
     tools:context=".Userprofile">
 
-    <!--<ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/user1"
         android:paddingBottom="15dp"
-        />-->
-
-    <QuickContactBadge
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center_horizontal"
-<<<<<<< HEAD
-        android:paddingTop ="25dp"
-        android:paddingBottom="15dp"
-
+        android:paddingTop="10dp"
         />
-=======
-        android:padding="25dp"
-        android:paddingTop="25dp" />
 
->>>>>>> c339d561d3e9b55d03d75f6c1c0e5129eb2548bc
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+    <!-- <QuickContactBadge
+         android:layout_width="100dp"
+         android:layout_height="100dp"
+         android:layout_gravity="center_horizontal"
+         android:paddingTop ="25dp"
+         android:paddingBottom="15dp"
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+         />-->
+ =======
+         android:padding="25dp"
+         android:paddingTop="25dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:text="User name" />
+ >>>>>>> c339d561d3e9b55d03d75f6c1c0e5129eb2548bc
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal">
 
-            <TextView
+         <LinearLayout
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="30dp"
+             android:layout_weight="1"
+             android:orientation="vertical">
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:text="Full name" />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:paddingBottom="10dp"
+                 android:text="User name" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:text="Password" />
+             <TextView
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:text="Phone Number" />
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:paddingBottom="10dp"
+                 android:text="Full name" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:text="Email address" />
-        </LinearLayout>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:paddingBottom="10dp"
+                 android:text="Password" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:paddingBottom="10dp"
+                 android:text="Phone Number" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:text="The User name" />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:paddingBottom="10dp"
+                 android:text="Email address" />
+         </LinearLayout>
 
-            <TextView
+         <LinearLayout
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:orientation="vertical">
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:text="User full name" />
+             <TextView
+                 android:id="@+id/theUserName"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:paddingBottom="10dp"
+                 android:text="The User name" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:text="********" />
+             <TextView
+                 android:id="@+id/theUserFullName"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:paddingBottom="10dp"
+                 android:text="User full name" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:text="User Phone Number" />
+             <TextView
+                 android:id="@+id/userPassword"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:paddingBottom="10dp"
+                 android:text="********" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:text="User Email address" />
-        </LinearLayout>
-    </LinearLayout>
+             <TextView
+                 android:id="@+id/userPhoneNumber"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:paddingBottom="10dp"
+                 android:text="01--------" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Edit profile" />
+             <TextView
+                 android:id="@+id/userEmail"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:paddingBottom="10dp"
+                 android:text="User Email address" />
+         </LinearLayout>
+     </LinearLayout>
+
+     <Button
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="40dp"
+         android:layout_gravity="center_horizontal"
+         android:text="Edit profile" />
 
 
-</LinearLayout>
+ </LinearLayout>
