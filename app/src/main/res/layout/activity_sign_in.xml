@@ -17,7 +17,7 @@
             android:layout_height="300px"
             android:layout_margin="30dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_launcher_background"/>
+            android:src="@drawable/user2"/>
 
         <EditText
             android:id="@+id/usernameSignIn"
@@ -55,7 +55,8 @@
             android:text="dont have acount SIGN UP"
             android:textSize="8pt"
             android:hyphenationFrequency="full"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:onClick="goToSignUp"/>
     </LinearLayout>
 
 
