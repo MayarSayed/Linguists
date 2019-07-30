@@ -21,13 +21,13 @@ public class CwsProfileActivity extends AppCompatActivity {
         // Set OnClickListener on Location Layout
         location.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
-
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("geo:30.0144, 31.2357?q=" + address));
-                if (intent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(intent);
+            public void onClick(View view) {
+                String address = "Mandala+co+working+space";
+                Intent openMaps = new Intent(Intent.ACTION_VIEW);
+                openMaps.setData(Uri.parse("geo:30.0144, 31.2357?q=" + address));
+                if (openMaps.resolveActivity(getPackageManager()) != null) {
+                    startActivity(openMaps);
+                }
             }
         });
     }
