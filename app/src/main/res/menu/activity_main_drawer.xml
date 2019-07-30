@@ -7,16 +7,16 @@
 
         <item
             android:id="@+id/nav_profile"
-            android:src="@drawable/user1"
+            android:icon="@drawable/ic_account_circle_black_24dp"
             android:title="@string/profile" />
 
         <item
             android:id="@+id/nav_home"
-            android:src="@drawable/home2"
+            android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/home" />
         <item
             android:id="@+id/nav_list"
-            android:src="@drawable/list2"
+            android:icon="@drawable/ic_format_list_bulleted_black_24dp"
             android:title="@string/list" />
 
         <item
@@ -34,7 +34,7 @@
                 android:title="Share" />
             <item
                 android:id="@+id/nav_help"
-                android:src="@drawable/question"
+                android:icon="@drawable/ic_help_black_24dp"
                 android:title="Help" />
         </menu>
     </item>
