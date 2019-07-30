@@ -16,4 +16,11 @@
     <string name="title_activity_sign_in_up">SignInUpActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="room_prompt">Select here</string>
+    <string-array name="Room_arrays">
+        <item>Small Meeting Area</item>
+        <item>Large Meeting Area</item>
+        <item>Shared Area</item>
+        <item>Training Room</item>
+    </string-array>
 </resources>

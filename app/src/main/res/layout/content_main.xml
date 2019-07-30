@@ -65,6 +65,7 @@
         android:text="co-working spaces list"
         android:textSize="10dp"
         android:layout_marginRight="20dp"
+        android:onClick="goToWorkingspacesList"
         android:layout_height="match_parent" />
     <Button
         android:layout_weight="1"

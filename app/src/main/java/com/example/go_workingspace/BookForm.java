@@ -18,14 +18,18 @@ import android.widget.Spinner;
 import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 
 public class BookForm extends AppCompatActivity {
 
     private static String[] Rooms = new String[] {"Small Meeting Room" , "Large Meeting Room", "Training Room" ,"Sharing Area"};
    private static  String[] WorkingSpace = new String[]{"ABC" ,"abc", "Square" ,"Arsto"};
+    private Spinner  spinner2;
 
     EditText chooseTime ;
     TimePicker TimePickerDialog ;
@@ -43,17 +47,19 @@ public class BookForm extends AppCompatActivity {
         setContentView(R.layout.activity_book_form);
 
         //Room Type
-        Spinner spin =  findViewById(R.id.Room_type);
-        spin.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+//       Spinner spin =  findViewById(R.id.Room_type);
+  //     spin.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
 
-        //Creating the ArrayAdapter instance having the country list
-        ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,Rooms);
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        spin.setAdapter(aa);
+       //Creating the ArrayAdapter instance having the country list
+    //    ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,Rooms);
+      //  aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+      //Setting the ArrayAdapter data on the Spinner
+      // spin.setAdapter(aa);
+      // spin.setOnItemSelectedListener();
+
         //working Space Name
         ArrayAdapter<String> adapter_workingSpace =
-                new ArrayAdapter<>(this,android.R.layout.simple_dropdown_item_1line, WorkingSpace);
+                new ArrayAdapter<>(this,android.R.layout.select_dialog_item, WorkingSpace);
         AutoCompleteTextView acTextView =  findViewById(R.id.WorkingSpace_name);
         acTextView.setThreshold(1);
         acTextView.setAdapter(adapter_workingSpace);
@@ -93,21 +99,26 @@ public class BookForm extends AppCompatActivity {
         }
 
        //////////////////////////////////////////
-        chooseTime = findViewById(R.id.ChooseTime);
+//        chooseTime = findViewById(R.id.ChooseTime);
+//
+//        chooseTime.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                TimePickerDialog timePickerDialog = new TimePickerDialog(
+//                        BookForm.this, new TimePickerDialog.OnTimeSetListener() {
+//                    @Override
+//                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minutes) {
+//                        chooseTime.setText(hourOfDay + minutes);
+//                    }
+//                }, 0, 0, false);
+//                timePickerDialog.show();
+//            }
+//        });
+        // add items into spinner dynamically
 
-        chooseTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                TimePickerDialog timePickerDialog = new TimePickerDialog(
-                        BookForm.this, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minutes) {
-                        chooseTime.setText(hourOfDay + minutes);
-                    }
-                }, 0, 0, false);
-                timePickerDialog.show();
-            }
-        });
+
+
+
 
 
 

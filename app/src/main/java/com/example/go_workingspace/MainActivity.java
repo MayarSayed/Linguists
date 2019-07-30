@@ -71,6 +71,11 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+    public void goToWorkingspacesList(View view)
+    {
+        Intent list = new Intent(MainActivity.this, ListActivity.class);
+        startActivity(list);
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
