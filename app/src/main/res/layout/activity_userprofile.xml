@@ -20,7 +20,8 @@
         android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
         android:paddingTop ="25dp"
-        android:pad="25dp"
+        android:paddingBottom="15dp"
+
         />
     <LinearLayout
         android:layout_width="match_parent"

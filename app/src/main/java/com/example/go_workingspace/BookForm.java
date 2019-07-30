@@ -27,7 +27,7 @@ public class BookForm extends AppCompatActivity {
     private static String[] Rooms = new String[] {"Small Meeting Room" , "Large Meeting Room", "Training Room" ,"Sharing Area"};
    private static  String[] WorkingSpace = new String[]{"ABC" ,"abc", "Square" ,"Arsto"};
 
-    EditText chooseTime = findViewById(R.id.etChooseTime);
+    EditText chooseTime ;
     TimePicker TimePickerDialog ;
 
     private TextView mDisplayDate;
@@ -87,11 +87,14 @@ public class BookForm extends AppCompatActivity {
 
                     String date = month + "/" + day + "/" + year;
                     mDisplayDate.setText(date);
+                    mDisplayDate.setClickable(false);
                 }
             };
         }
 
        //////////////////////////////////////////
+        chooseTime = findViewById(R.id.ChooseTime);
+
         chooseTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
