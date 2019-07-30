@@ -72,4 +72,9 @@ public class SignInActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, s, Toast.LENGTH_LONG);
         toast.show();
     }
+    public void goToSignUp(View view)
+    {
+        Intent signUp = new Intent(SignInActivity.this, SignUp_.class);
+        startActivity(signUp);
+    }
 }

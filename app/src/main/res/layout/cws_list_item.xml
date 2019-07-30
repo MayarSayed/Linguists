@@ -5,17 +5,17 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minHeight="150dp"
+    android:minHeight="130dp"
     android:background="@android:color/white"
     android:id="@+id/list_item"
-    android:backgroundTint="@color/forbutton"
+    android:backgroundTint="#cce0ff"
     >
 
     <ImageView
         android:id="@+id/cws_image"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/ic_launcher_background"/>
+        android:src="@drawable/cws2"/>
 
     <LinearLayout
         android:id="@+id/text_container"
