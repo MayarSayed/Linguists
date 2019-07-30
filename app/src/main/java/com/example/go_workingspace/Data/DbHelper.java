@@ -16,8 +16,7 @@ public class DbHelper extends SQLiteOpenHelper {
             Contract.Entry.COLUMN_EMAIL + " TEXT NOT NULL, " +
             Contract.Entry.COLUMN_NAME + " TEXT NOT NULL, " +
             Contract.Entry.COLUMN_PASSWORD + " TEXT NOT NULL, " +
-            Contract.Entry.COLUMN_BIRTHDAY + " TEXT NOT NULL DEFAULT \"16/08/1997\", " +
-            Contract.Entry.COLUMN_LOGED_IN + " INTEGER NOT NULL DEFAULT 0);";
+            Contract.Entry.COLUMN_BIRTHDAY + " TEXT NOT NULL DEFAULT \"16/08/1997\");";
 
     public static final String SQL_CREATE_OWNER = "CREATE TABLE " + Contract.Entry.OWNER_TABLE_NAME + " (" +
             Contract.Entry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -25,8 +24,12 @@ public class DbHelper extends SQLiteOpenHelper {
             Contract.Entry.COLUMN_EMAIL + " TEXT NOT NULL, " +
             Contract.Entry.COLUMN_NAME + " TEXT NOT NULL, " +
             Contract.Entry.COLUMN_PASSWORD + " TEXT NOT NULL, " +
-            Contract.Entry.COLUMN_LOGED_IN + " INTEGER DEFAULT 0," +
             Contract.Entry.COLUMN_RATING + " REAL DEFAULT 0," +
+            Contract.Entry.COLUMN_WIFI + " INTEGER DEFAULT 0, " +
+            Contract.Entry.COLUMN_DRINKS + " INTEGER DEFAULT 0, " +
+            Contract.Entry.COLUMN_MEETING_ROOMS + " INTEGER DEFAULT 0, " +
+            Contract.Entry.COLUMN_SHARED + " INTEGER DEFAULT 0, " +
+            Contract.Entry.COLUMN_OUTDOOR + " INTEGER DEFAULT 0, " +
             Contract.Entry.COLUMN_ADDRESS + " TEXT NOT NULL);";
 
     public static final String SQL_CREATE_HISTORY = "CREATE TABLE " + Contract.Entry.HISTORY_TABLE_NAME + " (" +
