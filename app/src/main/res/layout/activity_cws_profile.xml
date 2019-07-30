@@ -68,6 +68,7 @@
                 android:src="@drawable/phone_call" />
 
             <TextView
+                android:id="@+id/cwsPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="44dp"
                 android:text="01115034777"
@@ -184,7 +185,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/meeting_rooms"
+            android:id="@+id/drinks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">

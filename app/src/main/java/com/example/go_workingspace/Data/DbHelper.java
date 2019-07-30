@@ -34,7 +34,14 @@ public class DbHelper extends SQLiteOpenHelper {
             Contract.Entry.COLUMN_MEETING_ROOMS + " INTEGER DEFAULT 1, " +
             Contract.Entry.COLUMN_SHARED + " INTEGER DEFAULT 1, " +
             Contract.Entry.COLUMN_OUTDOOR + " INTEGER DEFAULT 1, " +
+            Contract.Entry.COLUMN_PHONE + " TEXT, " +
+            Contract.Entry.COLUMN_RATING_COUNTER + " INTEGER DEFAULT 0, " +
             Contract.Entry.COLUMN_ADDRESS + " TEXT NOT NULL);";
+
+    public static final String SQL_CREATE_CURRENT = "CREATE TABLE " + Contract.Entry.CURRENT_TABLE_NAME + " (" +
+            Contract.Entry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            Contract.Entry.COLUMN_CURRENT_OWNER + " INTEGER NOT NULL, " +
+            Contract.Entry._ID + " INTEGER NOT NULL);";
 
     /*public static final String SQL_CREATE_HISTORY = "CREATE TABLE " + Contract.Entry.HISTORY_TABLE_NAME + " (" +
             Contract.Entry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -51,6 +58,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_USER);
         db.execSQL(SQL_CREATE_OWNER);
+        db.execSQL(SQL_CREATE_CURRENT);
         //db.execSQL(SQL_CREATE_HISTORY);
         try {
             init(mContext);

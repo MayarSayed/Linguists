@@ -1,5 +1,6 @@
 package com.example.go_workingspace;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +29,7 @@ public class ListActivity extends AppCompatActivity {
                 Contract.Entry.COLUMN_RATING
         };
 
-        Cursor cursor = (Cursor) getContentResolver().query(
+        final Cursor cursor = (Cursor) getContentResolver().query(
                 Contract.Entry.OWNER_CONTENT_URI, projection,
                 null,
                 null,
@@ -45,7 +46,10 @@ public class ListActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Object listItem = listView.getItemAtPosition(position);
+                Cursor listItem = (Cursor) listView.getItemAtPosition(position);
+                Contract.Entry.currentCwsId = listItem.getInt(listItem.getColumnIndex(Contract.Entry._ID));
+                Intent cwsProfile = new Intent(ListActivity.this, CwsProfileActivity.class);
+                startActivity(cwsProfile);
             }
         });
     }

@@ -18,6 +18,8 @@ public final class Contract {
         public static final String OWNER_TABLE_NAME = "ownerAccounts";
         public static final String HISTORY_TABLE_NAME = "history";
 
+        public static final String CURRENT_TABLE_NAME = "history";
+
         public static final String _ID = "_id";
         public static final String COLUMN_NAME = "name";
         public static final String COLUMN_USERNAME = "username";
@@ -26,6 +28,8 @@ public final class Contract {
         public static final String COLUMN_BIRTHDAY = "birthday";
         public static final String COLUMN_ADDRESS = "address";
         public static final String COLUMN_RATING = "rating";
+        public static final String COLUMN_RATING_COUNTER = "rating";
+        public static final String COLUMN_PHONE = "rating";
 
         public static final String COLUMN_PLACE_ID = "place";
         public static final String COLUMN_USER_ID = "user id";
@@ -38,8 +42,11 @@ public final class Contract {
         public static final String COLUMN_DRINKS = "drinks";
         public static final String COLUMN_OUTDOOR = "outdoor";
 
+        public static final String COLUMN_CURRENT_USER = "userId";
+        public static final String COLUMN_CURRENT_OWNER = "ownerId";
 
         public static int currentId = -1;
+        public static int currentCwsId = -1;
 
         public static final Uri USER_CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, USER_TABLE_NAME);
         public static final Uri USER_ID_URI = Uri.withAppendedPath(BASE_ID_URI, USER_TABLE_NAME);
