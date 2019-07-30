@@ -25,6 +25,7 @@ public class CwsProfileActivity extends AppCompatActivity {
                 String address = "Mandala+co+working+space";
                 Intent openMaps = new Intent(Intent.ACTION_VIEW);
                 openMaps.setData(Uri.parse("geo:30.0144, 31.2357?q=" + address));
+                openMaps.setPackage("com.google.android.apps.maps");
                 if (openMaps.resolveActivity(getPackageManager()) != null) {
                     startActivity(openMaps);
                 }

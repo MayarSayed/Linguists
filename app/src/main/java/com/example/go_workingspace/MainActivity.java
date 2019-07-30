@@ -109,7 +109,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(bookForm);
 
         } else if (id == R.id.nav_send) {
-
+            Intent cwsProfile = new Intent(MainActivity.this, CwsProfileActivity.class);
+            startActivity(cwsProfile);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
