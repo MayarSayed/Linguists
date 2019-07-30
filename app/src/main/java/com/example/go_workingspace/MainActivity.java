@@ -97,23 +97,26 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            Intent gotoMain = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(gotoMain);
+        } else if (id == R.id.nav_list) {
             Intent listItem = new Intent(MainActivity.this, ListActivity.class);
             startActivity(listItem);
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_share) {
             Intent signUp = new Intent(MainActivity.this, SignUp_.class);
             startActivity(signUp);
-        } else if (id == R.id.nav_tools) {
+        } else if (id == R.id.nav_help) {
             Intent signIn = new Intent(MainActivity.this, SignInActivity.class);
             startActivity(signIn);
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_Book) {
             Intent bookForm = new Intent(MainActivity.this, BookForm.class);
             startActivity(bookForm);
-
-        } else if (id == R.id.nav_send) {
-
+        }
+        else if ( id == R.id.nav_profile)
+        {
+            Intent userProfile = new Intent(MainActivity.this, Userprofile.class);
+            startActivity(userProfile);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
