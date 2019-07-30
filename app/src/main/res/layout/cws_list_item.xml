@@ -9,6 +9,7 @@
     android:background="@android:color/white"
     android:id="@+id/list_item"
     android:backgroundTint="#cce0ff"
+    android:layout_marginBottom="10dp"
     >
 
     <ImageView
