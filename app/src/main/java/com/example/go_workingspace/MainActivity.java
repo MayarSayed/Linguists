@@ -70,20 +70,29 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+
     public void goToWorkingspacesList(View view)
     {
         Intent list = new Intent(MainActivity.this, ListActivity.class);
         startActivity(list);
     }
+
     public void goToProfile(View view)
     {
         Intent Profile = new Intent(MainActivity.this, Userprofile.class);
         startActivity(Profile );
     }
+
     public void goToBook(View view)
     {
         Intent bookForm = new Intent(MainActivity.this, BookForm.class);
         startActivity(bookForm);
+    }
+
+    public void goToCwsProfile(View view)
+    {
+        Intent cwsProfile = new Intent(MainActivity.this, CwsProfileActivity.class);
+        startActivity(cwsProfile);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

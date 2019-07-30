@@ -64,7 +64,7 @@
         android:textSize="10dp"
         android:layout_height="match_parent"
         android:background="@color/forbutton"
-        />
+        android:onClick="goToCwsProfile"/>
 
     </LinearLayout>
 

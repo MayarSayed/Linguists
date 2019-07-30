@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,6 +20,9 @@ import com.example.go_workingspace.Data.Contract;
 import com.google.android.material.navigation.NavigationView;
 
 public class CwsProfileActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    // Image ID to show in gallery
+    int imageID = R.drawable.main; /*TODO*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +98,34 @@ public class CwsProfileActivity extends AppCompatActivity implements NavigationV
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+        // Find left arrow
+        ImageView leftArrow = findViewById(R.id.previous_photo);
+
+        // Set OnClickListener on left arrow
+        leftArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Find gallery Image View
+                final ImageView gallery = findViewById(R.id.cws_gallery);
+                // imageID --; /*TODO*/
+                gallery.setImageResource(imageID);
+            }
+        });
+
+        // Find right arrow
+        ImageView rightArrow = findViewById(R.id.next_photo);
+
+        // Set OnClickListener on left arrow
+        rightArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Find gallery Image View
+                final ImageView gallery = findViewById(R.id.cws_gallery);
+                // imageID ++; /*TODO*/
+                gallery.setImageResource(imageID);
+            }
+        });
+
         // Find Location Layout
         LinearLayout location = findViewById(R.id.show_location);
 
@@ -107,6 +139,22 @@ public class CwsProfileActivity extends AppCompatActivity implements NavigationV
                 openMaps.setPackage("com.google.android.apps.maps");
                 if (openMaps.resolveActivity(getPackageManager()) != null) {
                     startActivity(openMaps);
+                }
+            }
+        });
+
+        // Find Call Layout
+        LinearLayout makeCall = findViewById(R.id.make_call);
+
+        // Set OnClickListener on Call Layout
+        makeCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phoneNumber = "+201115034777"; /*TODO*/
+                Intent openDial = new Intent(Intent.ACTION_DIAL);
+                openDial.setData(Uri.parse("tel:" + phoneNumber));
+                if (openDial.resolveActivity(getPackageManager()) != null) {
+                    startActivity(openDial);
                 }
             }
         });

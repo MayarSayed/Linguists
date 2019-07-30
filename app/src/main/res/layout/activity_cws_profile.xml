@@ -19,13 +19,14 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/cws_picture"
+                android:id="@+id/cws_gallery"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/main" />
 
             <ImageView
+                android:id="@+id/previous_photo"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/left_arrow"
@@ -33,6 +34,7 @@
                 android:layout_centerVertical="true"/>
 
             <ImageView
+                android:id="@+id/next_photo"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/right_arrow"
