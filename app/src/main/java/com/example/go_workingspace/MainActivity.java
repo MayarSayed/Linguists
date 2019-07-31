@@ -27,6 +27,36 @@ public class MainActivity extends AppCompatActivity
         mDbHelper = new DbHelper(this);
         if(Contract.Entry.currentId != -1){
             setContentView(R.layout.activity_main);
+            /*String[] projection = {
+                    Contract.Entry._ID,
+                    Contract.Entry.COLUMN_NAME,
+                    Contract.Entry.COLUMN_USERNAME,
+                    Contract.Entry.COLUMN_EMAIL
+            }; // Add Columns you want to display
+
+            String selection = Contract.Entry._ID + "+?";
+
+            String[] selectionArgs = {
+                    String.valueOf(Contract.Entry.currentId)
+            };
+
+            Cursor cursor = (Cursor) getContentResolver().query(
+                    Contract.Entry.OWNER_CONTENT_URI, projection,
+                    selection,
+                    selectionArgs,
+                    null);
+
+            cursor.moveToNext();
+
+            String name = cursor.getString(cursor.getColumnIndex(Contract.Entry.COLUMN_NAME));
+            String email = cursor.getString(cursor.getColumnIndex(Contract.Entry.COLUMN_EMAIL));
+
+            TextView navName = findViewById(R.id.nav_name);
+            TextView navEmail = findViewById(R.id.User_email);
+
+            navName.setText(name);
+            navEmail.setText(email);*/
+
 
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);

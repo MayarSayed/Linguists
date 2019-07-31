@@ -30,12 +30,12 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:icon="@drawable/ic_transfer_within_a_station_black_24dp"
+                android:title="Log Out" />
             <item
                 android:id="@+id/nav_help"
-                android:icon="@drawable/ic_help_black_24dp"
-                android:title="Help" />
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="Settings" />
         </menu>
     </item>
 

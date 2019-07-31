@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:hint="Co-Working Space Name"
+            android:hint="Co-Working Space Name/Location"
             android:text="">
 
             <requestFocus />
@@ -132,13 +132,13 @@
                 />
 
             <Button
+                android:id="@+id/dec"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="5dp"
                 android:background="@color/forbutton"
-                android:onClick="Decreament"
                 android:text="-"
                 android:textSize="20sp" />
 
@@ -154,12 +154,12 @@
                 android:textSize="16sp" />
 
             <Button
+                android:id="@+id/inc"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:background="@color/forbutton"
-                android:onClick="Increament"
                 android:text="+"
                 android:textSize="20sp" />
 
@@ -174,10 +174,12 @@
             android:hint="Number of Members"
             android:shadowColor="@color/colorAccent"
             android:text=""
+            android:inputType="number"
             android:textColorHighlight="@color/colorPrimary"
             android:textColorLink="@color/colorPrimaryDark" />
 
         <Button
+            android:id="@+id/submitBooking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

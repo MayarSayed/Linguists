@@ -1,14 +1,12 @@
 package com.example.go_workingspace;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -20,15 +18,18 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.go_workingspace.Data.Contract;
+
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 
 public class BookForm extends AppCompatActivity {
 
     private static String[] Rooms = new String[] {"Small Meeting Room" , "Large Meeting Room", "Training Room" ,"Sharing Area"};
-   private static  String[] WorkingSpace = new String[]{"ABC" ,"abc", "Square" ,"Arsto"};
+    private static ArrayList<String> WorkingSpace;
     private Spinner  spinner2;
 
     EditText chooseTime ;
@@ -40,11 +41,13 @@ public class BookForm extends AppCompatActivity {
     private TextClock tClock;
     private TextView tView;
     private Button btn;
+    private int counter = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_form);
+
 
         //Room Type
 //       Spinner spin =  findViewById(R.id.Room_type);
@@ -58,13 +61,32 @@ public class BookForm extends AppCompatActivity {
       // spin.setOnItemSelectedListener();
 
         //working Space Name
+        WorkingSpace = new ArrayList<String>();
+
+        String[] projection = {
+                Contract.Entry._ID,
+                Contract.Entry.COLUMN_NAME,
+                Contract.Entry.COLUMN_ADDRESS
+        }; // Add Columns you want to display
+
+        Cursor cursor = (Cursor) getContentResolver().query(
+                Contract.Entry.OWNER_CONTENT_URI, projection,
+                null,
+                null,
+                null);
+
+        while(cursor.moveToNext()){
+            String name = cursor.getString(cursor.getColumnIndex(Contract.Entry.COLUMN_NAME));
+            String address = cursor.getString(cursor.getColumnIndex(Contract.Entry.COLUMN_ADDRESS));
+            WorkingSpace.add(name + " " + address);
+        }
+
         ArrayAdapter<String> adapter_workingSpace =
                 new ArrayAdapter<>(this,android.R.layout.select_dialog_item, WorkingSpace);
         AutoCompleteTextView acTextView =  findViewById(R.id.WorkingSpace_name);
         acTextView.setThreshold(1);
         acTextView.setAdapter(adapter_workingSpace);
 
-        /////////////////////////////
         {
             mDisplayDate = findViewById(R.id.date_text_2);
             mDisplayDate.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +120,44 @@ public class BookForm extends AppCompatActivity {
             };
         }
 
+        Button inc = findViewById(R.id.inc);
+        Button dec = findViewById(R.id.dec);
+
+        inc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(counter <= 12)
+                    counter++;
+                TextView quantity = findViewById(R.id.quantity_text_view);
+                quantity.setText(String.valueOf(counter));
+            }
+        });
+
+        dec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(counter > 1)
+                    counter--;
+                TextView quantity = findViewById(R.id.quantity_text_view);
+                quantity.setText(String.valueOf(counter));
+            }
+        });
+
+        Button submit = findViewById(R.id.submitBooking);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                msg("Record Submitted");
+                Intent main = new Intent(BookForm.this, MainActivity.class);
+                startActivity(main);
+            }
+        });
+
+
+    }
+    private void msg(String s){
+        Toast toast = Toast.makeText(this, s, Toast.LENGTH_LONG);
+        toast.show();
        //////////////////////////////////////////
 //        chooseTime = findViewById(R.id.ChooseTime);
 //
@@ -115,12 +175,6 @@ public class BookForm extends AppCompatActivity {
 //            }
 //        });
         // add items into spinner dynamically
-
-
-
-
-
-
 
     }
 }
