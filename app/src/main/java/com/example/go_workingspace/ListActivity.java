@@ -3,7 +3,8 @@ package com.example.go_workingspace;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.KeyEvent;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -21,6 +22,7 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        getSupportActionBar().setTitle("Go-working Spaces Explore");
 
         String[] projection = {
                 Contract.Entry._ID,
@@ -54,38 +56,43 @@ public class ListActivity extends AppCompatActivity {
         });
 
         final EditText searchText = findViewById(R.id.search_data);
-        searchText.setOnKeyListener(new View.OnKeyListener() {
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                // If the event is a key-down event on the "enter" button
-                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    String search = searchText.getText().toString();
-                    String[] projection = {
-                            Contract.Entry._ID,
-                            Contract.Entry.COLUMN_NAME,
-                            Contract.Entry.COLUMN_ADDRESS,
-                            Contract.Entry.COLUMN_RATING
-                    };
-                    String selection = Contract.Entry.COLUMN_ADDRESS + "=? OR " + Contract.Entry.COLUMN_NAME + "=?";
-                    String[] selectionArgs = {
-                            search,
-                            search
-                    };
-                    Cursor cursor = (Cursor) getContentResolver().query(
-                            Contract.Entry.OWNER_CONTENT_URI, projection,
-                            selection,
-                            selectionArgs,
-                            null);
+
+        searchText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                String search = searchText.getText().toString().trim();
+                String[] projection = {
+                        Contract.Entry._ID,
+                        Contract.Entry.COLUMN_NAME,
+                        Contract.Entry.COLUMN_ADDRESS,
+                        Contract.Entry.COLUMN_RATING
+                };
+                String selection = Contract.Entry.COLUMN_ADDRESS + " LIKE '%" + search + "%' OR " + Contract.Entry.COLUMN_NAME + " LIKE '%" + search + "%'";
+                String[] selectionArgs = {
+
+                };
+                Cursor cursor = (Cursor) getContentResolver().query(
+                        Contract.Entry.OWNER_CONTENT_URI, projection,
+                        selection,
+                        null,
+                        null);
 
 
+                OwnerCursorAdaptor ownerCursorAdaptor = new OwnerCursorAdaptor(ListActivity.this, cursor);
 
-                    OwnerCursorAdaptor ownerCursorAdaptor = new OwnerCursorAdaptor(ListActivity.this, cursor);
+                listView = (ListView) findViewById(R.id.list);
 
-                    listView = (ListView) findViewById(R.id.list);
+                listView.setAdapter(ownerCursorAdaptor);
+            }
 
-                    listView.setAdapter(ownerCursorAdaptor);
-                }
-                return false;
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
     }

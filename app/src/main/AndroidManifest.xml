@@ -9,24 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BookForm"
-            android:label="Book Form"
-            ></activity>
-        <activity android:name=".SignInActivity"
-            android:label="Sign in"
-            />
-        <activity android:name=".CwsProfileActivity"
-            android:label="Co-Working Space"
-            />
-        <activity android:name=".SignUp_"
-            android:label="Sign Up"
-            />
-        <activity android:name=".ListActivity"
-            android:label="Co-Working spaces"
-            />
-        <activity android:name=".Userprofile"
-            android:label="Profile"
-            ></activity>
+        <activity android:name=".CwsNewActivity"></activity>
+        <activity
+            android:name=".BookForm"
+            android:label="Book Form" />
+        <activity
+            android:name=".SignInActivity"
+            android:label="Sign in" />
+        <activity
+            android:name=".CwsProfileActivity"
+            android:label="Co-Working Space" />
+        <activity
+            android:name=".SignUp_"
+            android:label="Sign Up" />
+        <activity
+            android:name=".ListActivity"
+            android:label="Co-Working spaces" />
+        <activity
+            android:name=".Userprofile"
+            android:label="Profile" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

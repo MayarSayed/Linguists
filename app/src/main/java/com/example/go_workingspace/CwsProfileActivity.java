@@ -18,7 +18,6 @@ public class CwsProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cws_profile);
-
         String[] projection = {
                 Contract.Entry._ID,
                 Contract.Entry.COLUMN_NAME,
@@ -40,6 +39,8 @@ public class CwsProfileActivity extends AppCompatActivity {
                 selectionArgs,
                 null);
 
+        cursor.moveToNext();
+
         String name = cursor.getString(cursor.getColumnIndex(Contract.Entry.COLUMN_NAME));
         String address = cursor.getString(cursor.getColumnIndex(Contract.Entry.COLUMN_ADDRESS));
         float rating = cursor.getFloat(cursor.getColumnIndex(Contract.Entry.COLUMN_RATING));
@@ -51,7 +52,7 @@ public class CwsProfileActivity extends AppCompatActivity {
         int shared = cursor.getInt(cursor.getColumnIndex(Contract.Entry.COLUMN_SHARED));
         int outdoor = cursor.getInt(cursor.getColumnIndex(Contract.Entry.COLUMN_OUTDOOR));
 
-        TextView addressText = findViewById(R.id.address);
+        TextView addressText = findViewById(R.id.addressProfile);
         TextView phoneText = findViewById(R.id.cwsPhone);
         View wifiView = findViewById(R.id.wifi);
         View outdoorView = findViewById(R.id.outdoor_area);
@@ -59,6 +60,7 @@ public class CwsProfileActivity extends AppCompatActivity {
         View meetingView = findViewById(R.id.meeting_rooms);
         View drinksView = findViewById(R.id.drinks);
 
+        getSupportActionBar().setTitle(name);
         addressText.setText(address);
         phoneText.setText(phone);
         if(meeting == 0){
