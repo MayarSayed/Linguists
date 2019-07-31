@@ -25,12 +25,16 @@ public class OwnerCursorAdaptor extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
         TextView itemName = (TextView) view.findViewById(R.id.name_text_view);
         TextView itemAddress = (TextView) view.findViewById(R.id.address);
-        RatingBar ratingBar = view.findViewById(R.id.rating_bar);
+        //TextView reviews = view.findViewById(R.id.reviews);
+
+        RatingBar ratingBar = view.findViewById(R.id.rating_bar_item);
 
         String name = cursor.getString(cursor.getColumnIndex(Contract.Entry.COLUMN_NAME));
         String address = cursor.getString(cursor.getColumnIndex(Contract.Entry.COLUMN_ADDRESS));
         float rating = cursor.getInt(cursor.getColumnIndex(Contract.Entry.COLUMN_RATING));
         ratingBar.setRating(rating);
+        //int counter = cursor.getInt(cursor.getColumnIndex(Contract.Entry.COLUMN_RATING_COUNTER));
+        //reviews.setText(counter);
 
         itemName.setText(name);
         itemAddress.setText(address);

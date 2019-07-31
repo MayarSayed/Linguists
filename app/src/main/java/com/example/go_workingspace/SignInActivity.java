@@ -130,11 +130,18 @@ public class SignInActivity extends AppCompatActivity {
         values.put(Contract.Entry.COLUMN_BIRTHDAY, "Ansary");
         values.put(Contract.Entry.COLUMN_EMAIL, "mohamedalansary@gmail.com");
         Uri uri = getContentResolver().insert(Contract.Entry.USER_CONTENT_URI, values);
-        insertOwner("Island", "Abdo Basha, Abassia", 4.2, "island", "password", "island@gmail.com");
-        insertOwner("Zone", "Abdo Basha, Abassia", 4.7, "zone", "password", "Zone@gmail.com");
+        insertOwner("Island", "Abdo Basha, Abassia", 3.5, "island", "password", "island@gmail.com", "01112131415", 42);
+        insertOwner("Zone", "Abdo Basha, Abassia", 4.4, "zone", "password", "Zone@gmail.com", "0101020304050", 20);
+        insertOwner("Mandala", "Tayaran, Nasr City", 4.7, "mandala", "password", "mandala@gmail.com", "01015141214", 60);
+        insertOwner("Kitchen", "Abdo Basha, Abassia", 3.7, "kitchen", "password", "kitchen@gmail.com", "01215141416", 55);
+        insertOwner("Square", "Abdo Basha, Abassia", 3.7, "square", "password", "square@gmail.com", "01516171814", 20);
+        insertOwner("New Cube", "Fifth Settlement, New Cairo", 4.3, "newcube", "password", "newcube@gmail.com", "01516132514", 20);
+        insertOwner("Seedspace", "Maadi", 3.8, "Seedspace", "password", "seedspace@gmail.com", "01054983344", 20);
+        insertOwner("Green Zone", "Sheraton, Heliopolis", 4.2, "greenzone", "password", "greenzone@gmail.com", "01210991522", 20);
+        insertOwner("Mars", "Elzaiton, West El Balad", 4.2, "zone", "password", "Zone@gmail.com", "0101020304050", 20);
     }
 
-    private void insertOwner(String name, String address, double rating, String username, String password, String email){
+    private void insertOwner(String name, String address, double rating, String username, String password, String email, String phone, int counter){
         ContentValues values = new ContentValues();
         values.put(Contract.Entry.COLUMN_NAME, name);
         values.put(Contract.Entry.COLUMN_ADDRESS, address);
@@ -142,6 +149,9 @@ public class SignInActivity extends AppCompatActivity {
         values.put(Contract.Entry.COLUMN_USERNAME, username);
         values.put(Contract.Entry.COLUMN_PASSWORD, password);
         values.put(Contract.Entry.COLUMN_EMAIL, email);
+        values.put(Contract.Entry.COLUMN_PHONE, phone);
+        values.put(Contract.Entry.COLUMN_RATING_COUNTER, counter);
+
 
         Uri uri = getContentResolver().insert(Contract.Entry.OWNER_CONTENT_URI, values);
     }
