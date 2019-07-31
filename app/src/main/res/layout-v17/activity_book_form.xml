@@ -137,10 +137,9 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="5dp"
-                android:background="@color/forbutton"
+                android:background="@color/MyBackground"
                 android:onClick="Decreament"
                 android:text="-"
-                android:textColor="@color/MyBackground"
                 android:textSize="20sp" />
 
             <TextView
@@ -155,12 +154,11 @@
                 android:textSize="16sp" />
 
             <Button
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="12dp"
+                android:layout_height="22dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
-                android:background="@color/forbutton"
-                android:textColor="@color/MyBackground"
+                android:background="@color/MyBackground"
                 android:onClick="Increament"
                 android:text="+"
                 android:textSize="20sp" />
