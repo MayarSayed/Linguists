@@ -140,6 +140,7 @@
                 android:background="@color/forbutton"
                 android:onClick="Decreament"
                 android:text="-"
+                android:textColor="@color/MyBackground"
                 android:textSize="20sp" />
 
             <TextView
@@ -159,6 +160,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:background="@color/forbutton"
+                android:textColor="@color/MyBackground"
                 android:onClick="Increament"
                 android:text="+"
                 android:textSize="20sp" />
@@ -182,6 +184,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="30sp"
+            android:textColor="@color/MyBackground"
             android:background="@color/forbutton"
             android:text="Submit" />
     </LinearLayout>
