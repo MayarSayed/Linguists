@@ -202,7 +202,7 @@ public class Provider extends ContentProvider {
             throw new IllegalArgumentException("User requires a username");
         }
 
-        String email = values.getAsString(Contract.Entry.COLUMN_USERNAME);
+        String email = values.getAsString(Contract.Entry.COLUMN_EMAIL);
         if(email == null){
             throw new IllegalArgumentException("User requires an email");
         }

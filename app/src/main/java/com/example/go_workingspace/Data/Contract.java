@@ -26,10 +26,11 @@ public final class Contract {
         public static final String COLUMN_EMAIL = "email";
         public static final String COLUMN_PASSWORD = "password";
         public static final String COLUMN_BIRTHDAY = "birthday";
+        public static final String COLUMN_PHONE = "phone";
+
         public static final String COLUMN_ADDRESS = "address";
         public static final String COLUMN_RATING = "rating";
-        public static final String COLUMN_RATING_COUNTER = "rating";
-        public static final String COLUMN_PHONE = "rating";
+        public static final String COLUMN_RATING_COUNTER = "ratingCounter";
 
         public static final String COLUMN_PLACE_ID = "place";
         public static final String COLUMN_USER_ID = "user id";
@@ -45,7 +46,7 @@ public final class Contract {
         public static final String COLUMN_CURRENT_USER = "userId";
         public static final String COLUMN_CURRENT_OWNER = "ownerId";
 
-        public static int currentId = -1;
+        public static long currentId = -1;
         public static int currentCwsId = -1;
 
         public static final Uri USER_CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, USER_TABLE_NAME);

@@ -73,8 +73,7 @@ public class DbSample extends AppCompatActivity {
         values.put(Contract.Entry.COLUMN_EMAIL, email);
         values.put(Contract.Entry.COLUMN_BIRTHDAY, birthday);
         Uri uri = getContentResolver().insert(Contract.Entry.USER_CONTENT_URI, values); // OWNER_CONTENT_URI for owner table
-}
-
+    }
 }
 
 

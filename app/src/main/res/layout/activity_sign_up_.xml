@@ -65,6 +65,7 @@
             android:id ="@+id/password"
             android:text = ""
             android:hint="Password"
+            android:inputType="textPassword"
             android:layout_marginBottom="15dp"
 
             />
@@ -75,6 +76,7 @@
             android:id ="@+id/re-password"
             android:text = ""
             android:hint="Re-type Password"
+            android:inputType="textPassword"
             android:layout_marginBottom="15dp"
 
             />
@@ -141,6 +143,7 @@
         </RadioGroup>
 
         <Button
+            android:id="@+id/SignUpButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text= "Register"

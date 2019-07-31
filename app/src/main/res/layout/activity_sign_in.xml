@@ -49,6 +49,7 @@
             />
 
         <TextView
+            android:id="@+id/to_sign_up"
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,6 +57,7 @@
             android:textSize="8pt"
             android:hyphenationFrequency="full"
             android:layout_gravity="center"
+            android:textColor="#00AFF0"
             android:onClick="goToSignUp"/>
     </LinearLayout>
 

@@ -3,19 +3,17 @@ package com.example.go_workingspace;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.go_workingspace.Data.Contract;
-import com.google.android.material.navigation.NavigationView;
 
-public class ListActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ListActivity extends AppCompatActivity {
 
     private ListView listView;
 
@@ -54,46 +52,41 @@ public class ListActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(cwsProfile);
             }
         });
-    }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        final EditText searchText = findViewById(R.id.search_data);
+        searchText.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // If the event is a key-down event on the "enter" button
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    String search = searchText.getText().toString();
+                    String[] projection = {
+                            Contract.Entry._ID,
+                            Contract.Entry.COLUMN_NAME,
+                            Contract.Entry.COLUMN_ADDRESS,
+                            Contract.Entry.COLUMN_RATING
+                    };
+                    String selection = Contract.Entry.COLUMN_ADDRESS + "=? OR " + Contract.Entry.COLUMN_NAME + "=?";
+                    String[] selectionArgs = {
+                            search,
+                            search
+                    };
+                    Cursor cursor = (Cursor) getContentResolver().query(
+                            Contract.Entry.OWNER_CONTENT_URI, projection,
+                            selection,
+                            selectionArgs,
+                            null);
 
-        if (id == R.id.nav_home)
-        {
-            Intent main = new Intent(ListActivity.this, MainActivity.class);
-            startActivity(main);
-        }
-        else if (id == R.id.nav_profile)
-        {
-            Intent user = new Intent(ListActivity.this, Userprofile.class);
-            startActivity(user);
-        }
-        else if (id == R.id.nav_list)
-        {
-            Intent list = new Intent(ListActivity.this, ListActivity.class);
-            startActivity(list);
-        }
-        else if (id == R.id.nav_Book)
-        {
-            Intent book = new Intent(ListActivity.this, BookForm.class);
-            startActivity(book);
-        }
-        else if (id == R.id.nav_share) {
-            Intent signUp = new Intent(ListActivity.this, SignUp_.class);
-            startActivity(signUp);
-        }
-        else if (id == R.id.nav_help)
-        {
-            Intent signIn = new Intent(ListActivity.this, SignInActivity.class);
-            startActivity(signIn);
-        }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+
+                    OwnerCursorAdaptor ownerCursorAdaptor = new OwnerCursorAdaptor(ListActivity.this, cursor);
+
+                    listView = (ListView) findViewById(R.id.list);
+
+                    listView.setAdapter(ownerCursorAdaptor);
+                }
+                return false;
+            }
+        });
     }
 }
