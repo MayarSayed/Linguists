@@ -132,6 +132,7 @@
                 />
 
             <Button
+                android:id="@+id/dec"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="10dp"
@@ -154,6 +155,7 @@
                 android:textSize="16sp" />
 
             <Button
+                android:id="@+id/inc"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="10dp"
@@ -178,6 +180,7 @@
             android:textColorLink="@color/colorPrimaryDark" />
 
         <Button
+            android:id="@+id/submitBooking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
