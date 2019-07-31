@@ -43,6 +43,7 @@
             android:layout_gravity="center"
             android:text="Sign In"
             android:textAllCaps="true"
+            android:textColor="@color/MyBackground"
             android:id="@+id/SignInButton"
             android:background="@color/forbutton"
             android:shadowColor="@color/colorAccent"
