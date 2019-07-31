@@ -21,15 +21,14 @@
 
 
         <AutoCompleteTextView
+            android:id="@+id/WorkingSpace_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id ="@+id/WorkingSpace_name"
-            android:text = ""
-            android:hint="Co-Working Space Name"
             android:layout_marginBottom="15dp"
-            >
+            android:hint="Co-Working Space Name"
+            android:text="">
 
-            <requestFocus/>
+            <requestFocus />
 
         </AutoCompleteTextView>
 
@@ -45,20 +44,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
                 android:text="Room Type"
                 android:textSize="20sp"
-                android:layout_marginRight="50dp"
+                android:textColor="@android:color/black"
                 />
 
 
             <Spinner
                 android:id="@+id/Room_type"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/MyBackground"
                 android:entries="@array/Room_arrays"
-                android:prompt="@string/room_prompt"
-                android:background="@color/forbutton"
-                />
+                android:prompt="@string/room_prompt" />
 
         </LinearLayout>
 
@@ -70,117 +69,121 @@
             >
 
             <TextView
+                android:id="@+id/Date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id ="@+id/Date"
-                android:text = "Date"
-                android:textSize="20sp"
                 android:layout_marginBottom="15dp"
-
+                android:text="Date"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
                 />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text = "mm/dd/yy"
-                android:textSize="20sp"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="50dp"
                 android:id="@+id/date_text_2"
-                android:background="@color/forbutton"
-                />
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="15dp"
+                android:padding="3dp"
+                android:background="@color/MyBackground"
+                android:text="mm/dd/yy"
+                android:textSize="15sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/ChooseTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="Choose the time" />
+            <TextView
+                android:id="@+id/ChooseTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Choose the time"
+                android:textColor="@android:color/black"
+                android:textSize="15dp"
+                />
+
             <Spinner
                 android:id="@+id/availableSlots"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:entries="@array/Slots_arrays"
                 android:prompt="@string/slots_prompt" />
-    </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="20sp"
-            >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Duration:"
                 android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="Duration:"
                 android:textSize="20sp"
+                android:textColor="@android:color/black"
                 />
 
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/forbutton"
                 android:onClick="Decreament"
                 android:text="-"
-                android:textSize="20sp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="10dp"
-                android:background="@color/forbutton"
-                />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/quantity_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="5dp"
                 android:text="1"
                 android:textColor="@android:color/black"
-                android:textSize="16sp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="10dp"
-                />
+                android:textSize="16sp" />
 
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/forbutton"
                 android:onClick="Increament"
                 android:text="+"
-                android:textSize="20sp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="10dp"
-                android:background="@color/forbutton"
-                />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
         <EditText
+            android:id="@+id/re-password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id ="@+id/re-password"
-            android:text = ""
-            android:hint="Number of Members"
-            android:layout_marginBottom="15dp"
             android:layout_marginTop="20sp"
+            android:layout_marginBottom="15dp"
+            android:hint="Number of Members"
             android:shadowColor="@color/colorAccent"
-         android:textColorHighlight="@color/colorPrimary"
-           android:textColorLink="@color/colorPrimaryDark"
-            />
+            android:text=""
+            android:textColorHighlight="@color/colorPrimary"
+            android:textColorLink="@color/colorPrimaryDark" />
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text= "Submit"
+            android:layout_gravity="center_horizontal"
             android:layout_margin="30sp"
             android:background="@color/forbutton"
-            />
+            android:text="Submit" />
     </LinearLayout>
 
 </LinearLayout>
