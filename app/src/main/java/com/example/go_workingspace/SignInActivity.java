@@ -140,6 +140,10 @@ public class SignInActivity extends AppCompatActivity {
         insertOwner("Green Zone", "Sheraton, Heliopolis", 4.2, "greenzone", "password", "greenzone@gmail.com", "01210991522", 20);
         insertOwner("Mars", "Elzaiton, West El Balad", 4.2, "zone", "password", "Zone@gmail.com", "0101020304050", 20);
     }
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 
     private void insertOwner(String name, String address, double rating, String username, String password, String email, String phone, int counter){
         ContentValues values = new ContentValues();

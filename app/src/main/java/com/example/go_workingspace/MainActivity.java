@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            finish();
         }
     }
 
@@ -157,13 +157,13 @@ public class MainActivity extends AppCompatActivity
             startActivity(book);
         }
         else if (id == R.id.nav_share) {
-            Intent signUp = new Intent(MainActivity.this, SignUp_.class);
-            startActivity(signUp);
+            Contract.Entry.currentId = -1;
+            Intent signIn = new Intent(MainActivity.this, SignInActivity.class);
+            startActivity(signIn);
         }
         else if (id == R.id.nav_help)
         {
-            Intent signIn = new Intent(MainActivity.this, SignInActivity.class);
-            startActivity(signIn);
+
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
